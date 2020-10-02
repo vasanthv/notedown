@@ -76,7 +76,7 @@ body {
 }
 .CodeMirror,
 .CodeMirror-scroll {
-	min-height: calc(100vh - 8rem);
+	min-height: calc(100vh - 10rem);
 }
 .CodeMirror .CodeMirror-line .cm-spell-error {
 	background: transparent !important;

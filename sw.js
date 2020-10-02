@@ -1,9 +1,8 @@
 /**
  * Notedown Service worker
- * Version: 0.1.1
  */
 
-const currentCacheName = "notedown.vasanthv.com";
+const currentCacheName = "notedown.vasanthv.com-v0.1.2";
 
 self.addEventListener("install", function(e) {
 	console.log("Install event triggered. New updates available.");

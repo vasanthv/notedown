@@ -17,11 +17,33 @@ body {
 	-moz-osx-font-smoothing: grayscale;
 	-webkit-text-size-adjust: 100%;
 	margin: 0px;
+	line-height: 1.6;
 }
 #app {
+	position: relative;
 	padding-top: 2rem;
 	max-width: 768px;
 	margin: auto;
+}
+#help {
+	position: absolute;
+	top: 6rem;
+	right: 1rem;
+	width: 240px;
+	z-index: 50;
+	background: #fff;
+	padding: 1rem;
+	box-shadow: 0 0.25rem 1rem rgba(48, 55, 66, .15);
+	transform: translateY(-2.5rem);
+	opacity: 0;
+	transition: opacity 0.25s ease-out, transform 0.25s ease-out;
+}
+#help.show {
+	transform: translateY(0rem);
+	opacity: 1;
+}
+#help #madeby {
+	margin-top: 1rem;
 }
 .editor-toolbar {
 	border: none;

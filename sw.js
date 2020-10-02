@@ -2,7 +2,7 @@
  * Notedown Service worker
  */
 
-const currentCacheName = "notedown.vasanthv.com-v0.1.2";
+const currentCacheName = "notedown.vasanthv.com-v0.1.3";
 
 self.addEventListener("install", function(e) {
 	console.log("Install event triggered. New updates available.");
@@ -20,6 +20,11 @@ self.addEventListener("install", function(e) {
 		"/icomoon/fonts/icomoon.ttf",
 		"/icomoon/fonts/icomoon.eot",
 		"/icomoon/fonts/icomoon.woff",
+		"apple-touch-icon.png",
+		"favicon.ico",
+		"favicon.svg",
+		"icon.png",
+		"mask-icon.svg"
 	];
 
 	// Deleting the previous version of cache

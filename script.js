@@ -2,7 +2,7 @@ var simplemde = new SimpleMDE({
 	element: document.getElementById("editor"),
 	autoDownloadFontAwesome: false,
 	autofocus: true,
-	autosave: { enabled: true, delay: 1000, uniqueId: "notedown.vasanthv.com" },
+	autosave: { enabled: true, delay: 100, uniqueId: "notedown.vasanthv.com" },
 	spellChecker: false,
 	status: false,
 	placeholder: "Start typing here...",
@@ -11,7 +11,8 @@ var simplemde = new SimpleMDE({
 			action: SimpleMDE.toggleBold,
 			className: "icon-bold",
 			title: "Bold",
-		}, {
+		},
+		{
 			name: "italic",
 			action: SimpleMDE.toggleItalic,
 			className: "icon-italic",
@@ -54,6 +55,11 @@ var simplemde = new SimpleMDE({
 			title: "Quote",
 		},
 		{
+			name: "what",
+			action: toggleHelp,
+			className: "icon-question-circle",
+			title: "What is this?",
+		}, {
 			name: "download",
 			action: e => download("notedown.md", e.value()),
 			className: "icon-download",
@@ -61,6 +67,16 @@ var simplemde = new SimpleMDE({
 		}
 	]
 });
+
+function toggleHelp() {
+	const helpClasses = document.getElementById("help").classList;
+	if (helpClasses.contains("show")) {
+		setTimeout(() => { document.getElementById("help").style.zIndex = "0"; }, 300);
+	} else {
+		document.getElementById("help").style.zIndex = "50";
+	}
+	document.getElementById("help").classList.toggle("show");
+}
 
 function download(filename, text) {
 	var element = document.createElement('a');

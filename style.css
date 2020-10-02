@@ -1,0 +1,4 @@
+.CodeMirror,
+.CodeMirror-scroll {
+	min-height: 100vh;
+}

@@ -1,0 +1,16 @@
+{
+	"name": "Notedown",
+	"short_name": "Notedown",
+	"description": "An offline markdown editor for the web.",
+	"icons": [
+	{
+		"src": "icon.png",
+		"sizes": "512x512",
+		"type": "image/png",
+		"purpose": "any maskable"
+	}],
+	"theme_color": "#333333",
+	"background_color": "#ffffff",
+	"display": "standalone",
+	"start_url": "/"
+}

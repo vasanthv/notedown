@@ -1,4 +1,4 @@
-var simplemde = new SimpleMDE({
+const simplemde = new SimpleMDE({
 	element: document.getElementById("editor"),
 	autoDownloadFontAwesome: false,
 	autofocus: true,
@@ -69,17 +69,17 @@ var simplemde = new SimpleMDE({
 });
 
 function toggleHelp() {
-	const helpClasses = document.getElementById("help").classList;
-	if (helpClasses.contains("show")) {
-		setTimeout(() => { document.getElementById("help").style.zIndex = "0"; }, 300);
+	const helpElement = document.getElementById("help");
+	if (helpElement.classList.contains("show")) {
+		setTimeout(() => { helpElement.style.zIndex = "0"; }, 300);
 	} else {
-		document.getElementById("help").style.zIndex = "100";
+		helpElement.style.zIndex = "100";
 	}
-	document.getElementById("help").classList.toggle("show");
+	helpElement.classList.toggle("show");
 }
 
 function download(filename, text) {
-	var element = document.createElement('a');
+	const element = document.createElement('a');
 	element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
 	element.setAttribute('download', filename);
 	element.style.display = 'none';
@@ -88,6 +88,10 @@ function download(filename, text) {
 	document.body.removeChild(element);
 }
 
+window.onscroll = function(evt) {
+	document.querySelector(".editor-toolbar").style.boxShadow = window.scrollY >= 32 ? "rgba(33, 35, 38, 0.1) 0px 10px 10px -10px" : "none";
+}
+
 if ("serviceWorker" in navigator) {
 	navigator.serviceWorker.register("/sw.js");
-}
+} else {}

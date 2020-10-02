@@ -45,6 +45,9 @@ body {
 #help #madeby {
 	margin-top: 1rem;
 }
+#editor {
+	opacity: 0;
+}
 .editor-toolbar {
 	border: none;
 	background: #fff;

@@ -1,7 +1,7 @@
 {
 	"name": "Notedown",
 	"short_name": "Notedown",
-	"description": "An offline markdown editor for the web.",
+	"description": "A beautiful, offline markdown editor for the web.",
 	"icons": [
 	{
 		"src": "icon.png",

@@ -2,7 +2,7 @@ var simplemde = new SimpleMDE({
 	element: document.getElementById("editor"),
 	autoDownloadFontAwesome: false,
 	autofocus: true,
-	autosave: { enabled: true, delay: 1000, uniqueId: "notedown.vasanthv.com" },
+	autosave: { enabled: true, delay: 100, uniqueId: "notedown.vasanthv.com" },
 	spellChecker: false,
 	status: false,
 	placeholder: "Start typing here...",

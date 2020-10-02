@@ -73,7 +73,7 @@ function toggleHelp() {
 	if (helpClasses.contains("show")) {
 		setTimeout(() => { document.getElementById("help").style.zIndex = "0"; }, 300);
 	} else {
-		document.getElementById("help").style.zIndex = "50";
+		document.getElementById("help").style.zIndex = "100";
 	}
 	document.getElementById("help").classList.toggle("show");
 }
@@ -89,4 +89,8 @@ function download(filename, text) {
 	element.click();
 
 	document.body.removeChild(element);
+}
+
+if ("serviceWorker" in navigator) {
+	navigator.serviceWorker.register("/sw.js");
 }

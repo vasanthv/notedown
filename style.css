@@ -2,13 +2,13 @@
 
 @font-face {
 	font-family: 'Droid serif';
-	src: url(./DroidSerif.ttf);
+	src: url(./droidserif.ttf);
 }
 
 @font-face {
 	font-family: 'Droid serif';
 	font-style: italic;
-	src: url(./DroidSerif-Italic.ttf);
+	src: url(./droidserif-italic.ttf);
 }
 
 body {
@@ -30,7 +30,7 @@ body {
 	top: 6rem;
 	right: 1rem;
 	width: 240px;
-	z-index: 50;
+	z-index: 100;
 	background: #fff;
 	padding: 1rem;
 	box-shadow: 0 0.25rem 1rem rgba(48, 55, 66, .15);
@@ -51,12 +51,11 @@ body {
 	text-align: center;
 	position: sticky;
 	top: 0px;
-	z-index: 100;
+	z-index: 50;
 	opacity: 1;
-	margin-bottom: 1rem;
 }
 .editor-toolbar a {
-	margin: 0px 0.5rem;
+	margin: 0.5rem;
 	color: #000 !important;
 	border: none;
 }

@@ -55,14 +55,20 @@ const simplemde = new SimpleMDE({
 			title: "Quote",
 		},
 		{
+			name: "preview",
+			action: SimpleMDE.togglePreview,
+			className: "icon-eye no-disable",
+			title: "Preview",
+		},
+		{
 			name: "what",
 			action: toggleHelp,
-			className: "icon-question-circle",
+			className: "icon-question-circle no-disable",
 			title: "What is this?",
 		}, {
 			name: "download",
 			action: e => download("notedown.md", e.value()),
-			className: "icon-download",
+			className: "icon-download no-disable",
 			title: "Download",
 		}
 	]

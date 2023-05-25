@@ -2,11 +2,12 @@ const simplemde = new SimpleMDE({
 	element: document.getElementById("editor"),
 	autoDownloadFontAwesome: false,
 	autofocus: true,
-	autosave: { enabled: true, delay: 100, uniqueId: "notedown.vasanthv.com" },
+	autosave: { enabled: true, delay: 100, uniqueId: "notedown.veeapp.co" },
 	spellChecker: false,
 	status: false,
 	placeholder: "Start typing here...",
-	toolbar: [{
+	toolbar: [
+		{
 			name: "bold",
 			action: SimpleMDE.toggleBold,
 			className: "icon-bold",
@@ -65,19 +66,22 @@ const simplemde = new SimpleMDE({
 			action: toggleHelp,
 			className: "icon-question-circle no-disable",
 			title: "What is this?",
-		}, {
+		},
+		{
 			name: "download",
-			action: e => download("notedown.md", e.value()),
+			action: (e) => download("notedown.md", e.value()),
 			className: "icon-download no-disable",
 			title: "Download",
-		}
-	]
+		},
+	],
 });
 
 function toggleHelp() {
 	const helpElement = document.getElementById("help");
 	if (helpElement.classList.contains("show")) {
-		setTimeout(() => { helpElement.style.zIndex = "0"; }, 300);
+		setTimeout(() => {
+			helpElement.style.zIndex = "0";
+		}, 300);
 	} else {
 		helpElement.style.zIndex = "100";
 	}
@@ -85,19 +89,21 @@ function toggleHelp() {
 }
 
 function download(filename, text) {
-	const element = document.createElement('a');
-	element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
-	element.setAttribute('download', filename);
-	element.style.display = 'none';
+	const element = document.createElement("a");
+	element.setAttribute("href", "data:text/plain;charset=utf-8," + encodeURIComponent(text));
+	element.setAttribute("download", filename);
+	element.style.display = "none";
 	document.body.appendChild(element);
 	element.click();
 	document.body.removeChild(element);
 }
 
-window.onscroll = function(evt) {
-	document.querySelector(".editor-toolbar").style.boxShadow = window.scrollY >= 32 ? "rgba(33, 35, 38, 0.1) 0px 10px 10px -10px" : "none";
-}
+window.onscroll = function (evt) {
+	document.querySelector(".editor-toolbar").style.boxShadow =
+		window.scrollY >= 32 ? "rgba(33, 35, 38, 0.1) 0px 10px 10px -10px" : "none";
+};
 
 if ("serviceWorker" in navigator) {
 	navigator.serviceWorker.register("/sw.js");
-} else {}
+} else {
+}
